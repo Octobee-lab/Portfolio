@@ -1,0 +1,124 @@
+!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Octobee</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: black;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .container {
+            position: relative;
+            text-align: center;
+            z-index: 1;
+        }
+
+        .logo {
+            width: 450px;
+            height: 450px;
+            margin-bottom: 2rem;
+            animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+
+        .title {
+            color: #fbbf24;
+            font-size: 2.85rem;
+            font-weight: bold;
+            letter-spacing: 0.05em;
+            margin-bottom: 1rem;
+        }
+
+        .subtitle {
+            color: rgba(251, 191, 36, 0.7);
+            font-size: 1.125rem;
+            max-width: 35rem;
+            margin: 0 auto;
+        }
+
+        .honey-particles {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .particle {
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            background: rgba(251, 191, 36, 0.2);
+            border-radius: 50%;
+            filter: blur(4px);
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0) scale(1);
+                opacity: 0;
+            }
+            50% {
+                transform: translateY(-100px) scale(1.5);
+                opacity: 0.6;
+            }
+            100% {
+                transform: translateY(-200px) scale(1);
+                opacity: 0;
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: .5;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="honey-particles" id="particles"></div>
+    <div class="container">
+        <img src="images/logo.png" alt="Logo" class="logo">
+        
+        <h1 class="title">Ce n'est pas encore la saison </h1>
+        <p class="subtitle">Nous mettons tout en œuvre pour vous préparer le meilleur miel.</p>
+    </div>
+
+    <script>
+        function createParticles() {
+            const container = document.getElementById('particles');
+            const particleCount = 20;
+
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                
+                const left = Math.random() * 100;
+                const top = Math.random() * 100;
+                const delay = Math.random() * 5;
+                const duration = 5 + Math.random() * 5;
+
+                particle.style.cssText = `
+                    left: ${left}%;
+                    top: ${top}%;
+                    animation: float ${duration}s ${delay}s infinite;
+                `;
+
+                container.appendChild(particle);
+            }
+        }
+
+        createParticles();
+    </script>
+</body>
+</html>
