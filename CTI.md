@@ -1,7 +1,8 @@
 
 Cyber ​​threat intelligence (CTI) is a cyber security discipline that aims to produce actionable output after processing and interpreting the data collected from multiple sources, and to inform organizations against cyber attacks through these outputs to minimize damages.
 
-![[Pasted image 20250123101642.png]]
+![image](https://github.com/user-attachments/assets/e1416c62-cc73-402b-8826-a6443cc9044c)
+
 
 Planing and Direction : . Planning is the part that allows us to find answers to questions such as what exactly is expected from intelligence, who will consume the intelligence obtained, and which teams or individuals will take action as a result of the intelligence obtained
 
